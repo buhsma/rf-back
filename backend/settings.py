@@ -36,7 +36,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['209.38.232.16']
+ALLOWED_HOSTS = ['209.38.232.16', 'localhost' 'api.relayfox.com']
 
 
 # Application definition
