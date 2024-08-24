@@ -49,6 +49,7 @@ def handleFileUpload(request):
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def handleFileDownload(request, id, index):
+    print("id: ", id)
     if id is None:
         return Response({"error": "Failed to download file"}, status=400)
     else:
@@ -62,6 +63,8 @@ def handleFileDownload(request, id, index):
             )
             if index == "meta":
                 response["iv"] = FileChunk.objects.get(file_id=id).iv
+                response["Access-Control-Expose-Headers"] = "iv"
+                print("iv: ", response["iv"])
             return response
 
 
