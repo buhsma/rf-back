@@ -4,8 +4,10 @@ import os
 # Ideally, store your API key in an environment variable
 resend.api_key = os.getenv("RESEND_API_KEY", "re_chwTgzjy_CeU8zdZJ3V8oW2qYhbMUhe7P")
 
-def send_password_reset_email(user_email, reset_link):
+def send_password_reset_email(user_email, token):
+    reset_link = f"http://relayfox.com/reset-password/{token}/"
     
+    # HTML version of the email
     html_content = f"""
     <html>
     <head>
@@ -54,7 +56,7 @@ def send_password_reset_email(user_email, reset_link):
     """
 
     params = {
-        "from": "noreply@relayfox.com",
+        "from": "bro@relayfox.com",
         "to": [user_email],
         "subject": "Reset Password",
         "html": html_content,
