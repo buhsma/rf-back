@@ -23,4 +23,4 @@ def contactRelay(request):
             "subject": "Ticket from " + email + ": " + subject,
             "text": "From: " + email + "\n\n" + message,
         }
-        resend.Email.send(params)
+        resend.Emails.send(params)
