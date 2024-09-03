@@ -16,6 +16,7 @@ def contactRelay(request):
     if email is None or subject is None or message is None:
         return Response({"error": "Invalid request"}, status=400)
     else:
+        resend.api_key = environ.Env().str("RESEND_API_KEY")
         params = {
             "from": "contact@relayfox.com",
             "to": [environ.Env().str("RELAY_EMAIL")],
