@@ -28,7 +28,7 @@ urlpatterns = [
     path('api/login', login, name='login'),
     path('api/reset_password/<uidb64>/<token>/', reset_password, name='reset_password'),
     path('api/reset_password/', request_password_reset, name='request_password_reset'),
-    path('api/contact/', contactRelay, name='contact'),
+    path('api/contact', contactRelay, name='contact'),
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
