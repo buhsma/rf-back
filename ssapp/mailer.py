@@ -1,8 +1,8 @@
 import resend
-import os
+import environ
 
 # Ideally, store your API key in an environment variable
-resend.api_key = os.getenv("RESEND_API_KEY", "re_chwTgzjy_CeU8zdZJ3V8oW2qYhbMUhe7P")
+resend.api_key = environ.Env().str("RESEND_API_KEY")
 
 def send_password_reset_email(user_email, reset_link):
     
