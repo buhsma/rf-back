@@ -21,7 +21,7 @@ def contactRelay(request):
             "from": "contact@relayfox.com",
             "to": [environ.Env().str("RELAY_EMAIL")],
             "subject": "Ticket from " + email + ": " + subject,
-            "text": "From: " + email + "\n\n" + message,
+            "text": "From: " + email + "\n\n" + "Subject: " + subject + "\n\n" "Message: " + message,
         }
     
         try:
