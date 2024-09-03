@@ -25,7 +25,7 @@ def contactRelay(request):
         }
     
         try:
-            resend.Emails.send(**params)
+            resend.Emails.send(params)
             return Response({"message": "Email sent"}, status=200)
         except Exception as e:
             return Response({"error": str(e)}, status=400)
